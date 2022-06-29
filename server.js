@@ -11,6 +11,9 @@ import { infoRouter } from './src/routers/infoRouter.js';
 
 const app = express();
 
+const args = parseArgs(process.argv.slice(2));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
