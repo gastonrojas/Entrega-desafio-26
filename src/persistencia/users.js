@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
-import mongoDb from '../../mongoDb.js'
+import 'dotenv/config'
 
-await mongoose.connect(mongoDb.users);
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@productos.txyub.mongodb.net/${process.env.UDB}`
+
+await mongoose.connect(uri);
 
 
 const db = mongoose.model('users', {
